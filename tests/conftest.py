@@ -1,16 +1,7 @@
 import allure
 import pytest
-import random
-import string
-
 from handlers.handlers import post_create_courier
-
-
-@allure.step(f'Генерация даннях для создания курьера')
-def generate_random_string(length):
-    letters = string.ascii_lowercase
-    random_string = ''.join(random.choice(letters) for _ in range(length))
-    return random_string
+from helpers import generate_random_string
 
 
 @pytest.fixture(scope="function")

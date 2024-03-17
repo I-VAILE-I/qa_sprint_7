@@ -24,6 +24,6 @@ class TestCreateOrder:
             rent: int,
             colors: Optional[list]
     ):
-        response = post_create_order(metro=metro, rent=rent, colors=colors)
+        response = post_create_order(metro=metro, rent=rent, colors=colors).json()
 
-        assert "track" in response.text
+        assert "track" in response
